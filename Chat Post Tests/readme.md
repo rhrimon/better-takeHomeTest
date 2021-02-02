@@ -1,5 +1,9 @@
 # POST Tests
 
+### Description
+* These tests will check for a standard 200 response, 400 response  
+and 404 response
+
 ### Dependencies
 * pipenv
 
