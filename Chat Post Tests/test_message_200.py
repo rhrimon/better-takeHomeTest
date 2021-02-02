@@ -5,7 +5,7 @@ from datetime import datetime
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 
-def test_post_200():
+def test_message_200():
     url = 'http://localhost:8080'
     posts_url = 'http://localhost:8080/api/posts'
     message = 'Hello World'
