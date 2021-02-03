@@ -9,7 +9,7 @@ verifying that a successful 200 response is received.
 * pipenv
 
 ### How To Run
-1. In terminal, run the following command in the `tests` directory: *pipenv shell*  
+1. In terminal, run the following command in the `Chat Post Tests` directory: *pipenv shell*  
 This will start the virtual environment. 
 2. Run the following command: *pipenv install --dev*  
 This will install all necessary test dependencies. The *--dev* flag ensures that the   
