@@ -1,8 +1,8 @@
 # User Tests
 
 ### Description
-* These tests will check for a standard 200 and 404 response   
-when attempting to make a get request to ../api/users
+* These tests will check for a standard 200 and 404 response when attempting   
+to make a get request to ../api/users
 
 ### Dependencies
 * pipenv
