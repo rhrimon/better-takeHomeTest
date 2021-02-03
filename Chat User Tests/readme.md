@@ -1,4 +1,4 @@
-# User Tests
+# Chat User Tests
 
 ### Description
 * These tests will check for a standard 200 and 404 response when attempting   
