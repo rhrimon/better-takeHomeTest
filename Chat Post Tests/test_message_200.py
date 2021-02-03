@@ -7,7 +7,7 @@ from datetime import datetime
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 
-class TestChatPost:
+class TestChatMessage:
     url = 'http://localhost:8080'
     postUrl = 'http://localhost:8080/api/posts'
     message = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(20))
