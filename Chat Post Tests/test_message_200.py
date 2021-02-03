@@ -10,8 +10,9 @@ from selenium.webdriver.chrome.options import Options
 class TestChatPost:
     url = 'http://localhost:8080'
     postUrl = 'http://localhost:8080/api/posts'
-    message = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(16))
+    message = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(20))
 
+    #Verify that message sent through front end matches response from back end
     def test_message_200(self):
         #use selenium to open app and send message
         driver = webdriver.Chrome(ChromeDriverManager().install())
@@ -35,6 +36,7 @@ class TestChatPost:
         assert response.status_code == 200
         assert response_message['received']['message'] == self.message
 
+    #verify that message over 140 characters cannot be sent through POST request
     def test_message_more_than_140_chars(self):
         response = requests.post(self.postUrl, json={
         "id": str(datetime.now()), 
@@ -42,5 +44,5 @@ class TestChatPost:
         "message": str(('a' * 145)),
         "ts": str(datetime.now())})
 
-        #verify that response received is valid and matches message passed
+
         assert response.status_code == 400
