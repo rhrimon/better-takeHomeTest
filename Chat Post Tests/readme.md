@@ -1,4 +1,4 @@
-# POST Tests
+# Chat Post Tests
 
 ### Description
 * These tests will check for a standard 200 response, 400 response,  
