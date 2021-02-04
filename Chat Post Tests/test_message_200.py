@@ -24,25 +24,24 @@ class TestChatMessage:
         time.sleep(3)
         driver.close()
     
-        #send post request to ../api/posts 
+        #Send post request to ../api/posts 
         response = requests.post(self.postUrl, json={
         "id": str(datetime.now()), 
         "user": 'client',
         "message": f'{self.message}',
         "ts": str(datetime.now())})
 
-        #verify that response received is valid and matches message passed
+        #Verify that response received is valid and matches message passed
         response_message = response.json()
         assert response.status_code == 200
         assert response_message['received']['message'] == self.message
 
-    #verify that message over 140 characters cannot be sent through POST request
+    #Verify that message over 140 characters cannot be sent through POST request
     def test_message_more_than_140_chars(self):
         response = requests.post(self.postUrl, json={
         "id": str(datetime.now()), 
         "user": 'client',
         "message": str(('a' * 145)),
         "ts": str(datetime.now())})
-
 
         assert response.status_code == 400
