@@ -3,7 +3,7 @@ import string
 import random
 import requests
 from selenium import webdriver
-from datetime import datetime
+from datetime import datetime 
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 
@@ -34,6 +34,7 @@ class TestChatMessage:
         #Verify that response received is valid and matches message passed
         response_message = response.json()
         assert response.status_code == 200
+        assert len(str(response_message['received']['message'])) <= 140
         assert response_message['received']['message'] == self.message
 
     #Verify that message over 140 characters cannot be sent through POST request
