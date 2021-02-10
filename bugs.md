@@ -16,7 +16,7 @@ This issue is not present when user sends message by pressing Enter.
 4. No ability to create line breaks in messages, leading to long messages being cut off at smaller window sizes.
 
 # TEST GAPS
-While the current test checks if the App component renders, it does not check for the nested components. 
+While the current test checks if the App component renders, it does not check for the nested components. The tests also do not list Watchman as a dependancy. I've included some Javascript tests to check for the rendering of the nested components, along with positive and negative tests using Selenium and Python to check for standard HTTP response status codes. 
 
 # MANUAL TESTS   
 ### PERFORMED
@@ -28,6 +28,7 @@ While the current test checks if the App component renders, it does not check fo
 6. Manually attempting to paste message
 7. Manual check of all spelling and grammar 
 8. Manual check of all interactive elements 
+9. Manual check of resizing window 
 
 ### WOULD LIKE TO PERFORM
 1. Test Login functionality and logging in manually
@@ -38,7 +39,7 @@ While the current test checks if the App component renders, it does not check fo
 1. `test_message_more_than_140_chars` 
    * The purpose of this test is to send a POST request including a message that is over 140 characters. The expected result is a 400 error; however a 200 is returned, likely because there is currently no validation on the /posts POST method 
 2. `test_post_400`
-   * The purpose of this test is to send an invalid post request to verify that the proper error code is returned. The expected result is a 400 error; however a 200 is returned, likely because there is currently no validation on the /posts POST method. 
+   * The purpose of this test is to send an invalid post request to verify that the proper error code is returned. The expected result is a 400 error; however a 200 is returned, likely because there is currently no validation on the /posts POST method
 
 # CLOSING THOUGHTS
-- would be helpful if i would receive some responses back 
+  Overall the exercise was enjoyable to complete. Any difficulties I ran into (Watchman dependency errors, failing tests) were easily traced and remedied. It would be helpful if I would receive some kind of response back when an invalid POST request is sent. 
